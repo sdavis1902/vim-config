@@ -1,6 +1,6 @@
 execute pathogen#infect()
 
-let mapleader = "\<Space>"
+let mapleader = ","
 
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
@@ -12,6 +12,46 @@ nnoremap nt :NERDTree<Cr>
 
 nnoremap <tab> :bnext<Cr>
 nnoremap <Backspace> :bprevious<Cr>
+
+" mac searching case insensative and highlight as you type etc
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+" ,<space> clears above highlighting
+nnoremap <leader><space> :noh<cr>
+" ,l  toggle line numbers
+" ,w   remove end of line whitespace
+nnoremap <leader>l :set nu!<cr>
+nnoremap <leader>w :FixWhitespace<cr>
+
+" disable arrow keys to force use of hjkl
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+nnoremap ; :
+
+" make it visualize tabs and end of lines
+set list
+set listchars=tab:▸\ ,eol:¬
+" ,1 disable and enable above
+nmap <leader>1 :set list!<cr>
 
 " size of a hard tabstop
 set tabstop=4
@@ -61,9 +101,6 @@ nmap <F9> :TagbarOpenAutoClose<CR>
 nmap <F8> :TagbarToggle<CR>
 
 set updatetime=1500
-
-noremap j 5j
-noremap k 5k
 
 let g:ctrlp_show_hidden = 1
 

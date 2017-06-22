@@ -1,0 +1,57 @@
+snippet met
+	public function ${1}(){
+		${2}
+	}
+snippet pmet
+	private function ${1}(){
+		${2}
+	}
+snippet arr
+	$${1} = [
+		${2}
+	];
+snippet red
+	return redirect('${1}');
+snippet redm
+	return redirect('${1}')->withMessage('${2}');
+snippet rede
+	return redirect('${1}')->withError('${2}');
+snippet retv
+	return view('${1}');
+snippet retvd
+	return view('${1}', [
+		'${2}' => $${3}
+	]);
+snippet vfail
+	if( $v->fails() ){
+		return redirect('${1}')->withErrors($v)->withInput();
+	}
+snippet ireq
+	Request $request
+snippet val
+	$rules = [
+		${1}
+	];
+	$v = Validator::make($request->all(), $rules);
+snippet find
+	${1}::find($!{2});
+snippet reqi
+	$request->input('${1}')
+snippet sentu
+	$user = Sentinel::getUser();
+snippet rc
+	MoreRoute::('${1}', '${2}');
+snippet rg
+	Route::get('${1}', '${2}');
+snippet rga
+	Route::getUser('${1}', function () {
+		${2}
+	});
+snippet rp
+	Route::post('${1}', '${snippet2}');
+snippet rpa
+	Route::post('${1}', function () {
+		${2}
+	});
+snippetet $
+	$this->${1}

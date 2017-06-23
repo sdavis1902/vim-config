@@ -155,6 +155,13 @@ augroup END
 set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
+function! IPhpInsertUse()
+	call PhpInsertUse()
+	call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
 " ---------------------- Laravel stuff ------------"
 nmap <leader>lr :e routes/web.php<cr>
 nmap <leader>la :e config/app.php<cr>

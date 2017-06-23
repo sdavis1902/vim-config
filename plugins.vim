@@ -30,6 +30,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'tpope/vim-surround'
+Plugin 'arnaud-lb/vim-php-namespace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -34,6 +34,13 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>l :set nu!<cr>
 nnoremap <leader>w :FixWhitespace<cr>
 
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 " disable arrow keys to force use of hjkl
 " nnoremap <up> <nop>
 " nnoremap <down> <nop>
@@ -83,7 +90,7 @@ set smarttab
 set hidden
 
 " always uses spaces instead of tab characters
-" set expandtab
+set expandtab
 " set autoindent
 " set autoindent
 " set shiftwidth=4
@@ -189,3 +196,23 @@ nmap <leader>lfv :CtrlP<cr>resources/views
 " when over text, it will look for that in ctags and go to it
 
 " :ccl  close quickfix
+
+" yiw  yank current work
+
+" m{cap character} - set a mark
+" '{above character} - return to start of line of mark
+" `{above character} - return to line and column of mark
+
+" delete to mark
+" use m{lowercase char ( lower case limits it to current file )}
+" creates mark at bottom of where you want to delete to
+" got to start of delete and hit d'{above char}
+" v'{above char} would select to mark
+
+" vat selet a tag, for html will select the nearest surrounding tag
+" dat same as above but deletes it
+
+" highlight then {1} shift < or > will indend selected n times
+
+" o go to insert mode on new line
+" O does same but line above

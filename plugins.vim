@@ -28,9 +28,12 @@ Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'garbas/vim-snipmate'
 Plugin 'tpope/vim-surround'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'tobyS/vmustache'
+Plugin 'SirVer/ultisnips'
+Plugin 'tobyS/pdv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

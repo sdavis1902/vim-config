@@ -1,0 +1,96 @@
+snippet met
+public function $1(){
+	$2
+	$1
+}
+endsnippet
+
+snippet pmet
+private function $1(){
+	$2
+}
+endsnippet
+
+snippet arr
+$$1 = [
+	$2
+];
+endsnippet
+
+snippet red
+return redirect('$1');
+endsnippet
+
+snippet redm
+return redirect('$1')->withMessage('$2');
+endsnippet
+snippet rede
+	return redirect('$1')->withError('$2');
+endsnippet
+
+snippet retv
+return view('$1');
+endsnippet
+
+snippet retvd
+return view('$1', [
+	'$2' => $$3
+]);
+endsnippet
+
+snippet vfail
+if( $v->fails() ){
+	return redirect('$1')->withErrors($v)->withInput();
+}
+endsnippet
+
+snippet ireq
+Request $request
+endsnippet
+
+snippet val
+$rules = [
+	$1
+];
+$v = Validator::make($request->all(), $rules);
+endsnippet
+
+snippet find
+$1::find($2);
+endsnippet
+
+snippet reqi
+$request->input('$1')
+endsnippet
+
+snippet sentu
+$user = Sentinel::getUser();
+endsnippet
+
+snippet rc
+MoreRoute::('$1', '$2');
+endsnippet
+
+snippet rg
+Route::get('$1', '$2');
+endsnippet
+
+snippet rga
+Route::getUser('$1', function () {
+	$2
+});
+endsnippet
+
+snippet rp
+Route::post('$1', '$2');
+endsnippet
+
+snippet rpa
+Route::post('$1', function () {
+	$2
+});
+endsnippet
+
+snippet $
+$this->${1}
+endsnippet

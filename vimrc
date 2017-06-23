@@ -9,11 +9,31 @@ let mapleader = ","
 " nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 nnoremap <leader>e :CtrlPBuffer<Cr>
+map <C-r> :CtrlPBufTag<cr>
+set wildignore+=*/vendor/**
+set wildignore+=*/node_modules/**
 
-nnoremap <leader>nt :NERDTree<Cr>
+nnoremap <C-b> :NERDTreeToggle<Cr>
 
 nnoremap <tab> :bnext<Cr>
 nnoremap <Backspace> :bprevious<Cr>
+
+"easier window navigation
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+""Resize vsplit
+nmap <C-v> :vertical resize +5<cr>
+nmap 25 :vertical resize 40<cr>
+nmap 50 <c-w>=
+nmap 75 :vertical resize 120<cr>
+
+" Open splits
+nmap vs :vsplit<cr>
+nmap sp :split<cr>
 
 nmap <leader>t :!ctags -R --exclude=vendor --exclude=node_modules --exclude=public<cr>
 nmap <leader>f :tag<space>
@@ -80,6 +100,9 @@ set tabstop=4
 " size of an "indent"
 set shiftwidth=4
 
+" easy escaping to normal mode
+imap jj <esc>
+
 " a combination of spaces and tabs are used to simulate tab stops at a width
 " other than the (hard)tabstop
 set softtabstop=4
@@ -137,6 +160,15 @@ let g:airline#extensions#tabline#left_alt_sep = '||'
 " let g:airline_theme='base16_atelierlakeside'
 let g:airline_theme='papercolor'
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+set encoding=utf-8
+set noshowmode
+
+" auto-remove trailing spaces
+autocmd BufWritePre *.php :%s/\s\+$//e
+autocmd BufWritePre *.twig :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e
 
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
@@ -171,7 +203,7 @@ autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
 
 " ---------------------- Laravel stuff ------------"
 nmap <leader>lr :e routes/web.php<cr>
-nmap <leader>la :e config/app.php<cr>
+nmap <leader>lca :e config/app.php<cr>
 nmap <leader>lfc :CtrlP<cr>app/Http/Controllers
 nmap <leader>lfm :CtrlP<cr>app/Models
 nmap <leader>lfv :CtrlP<cr>resources/views
@@ -216,3 +248,7 @@ nmap <leader>lfv :CtrlP<cr>resources/views
 
 " o go to insert mode on new line
 " O does same but line above
+
+" ctrl r - ctrlp buffer, lets you fuzzy search functions etc in current file
+" vs and sp to open splits
+" ctrl and h j k l to switch between them

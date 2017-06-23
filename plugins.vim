@@ -34,6 +34,7 @@ Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'tobyS/vmustache'
 Plugin 'SirVer/ultisnips'
 Plugin 'tobyS/pdv'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

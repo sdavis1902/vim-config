@@ -83,3 +83,55 @@ snippet selects
 	@endif
 </div>
 endsnippet
+
+
+snippet lmcreate
+Schema::create('$1', function($table) {
+	$table->engine = 'InnoDB';
+
+	$table->increments('id')->unsigned();
+
+	$table->timestamps();
+	$table->softDeletes();
+});
+endsnippet
+
+
+snippet lmedit
+Schema::table('$1', function ($table) {
+
+});
+endsnippet
+
+
+snippet lmforkey
+$table->integer('$1')->unsigned();
+$table->foreign('$1')->references('id')->on('$2');
+endsnippet
+
+
+snippet lmint
+$table->integer('$1');
+endsnippet
+
+
+snippet lmstr
+$table->string('$1', $2);
+endsnippet
+
+
+snippet lmenum
+$table->enum('$1', [$2])->default('$3');
+endsnippet
+
+
+snippet lmdropt
+Schema::drop('$1');
+endsnippet
+
+
+snippet lmdropc
+Schema::table('$1', function($table){
+	$table->dropColumn('$2');
+});
+endsnippet

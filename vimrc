@@ -9,7 +9,7 @@ let mapleader = ","
 " nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 nnoremap <leader>e :CtrlPBuffer<Cr>
-map <C-r> :CtrlPBufTag<cr>
+map <C-o> :CtrlPBufTag<cr>
 set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
 
@@ -204,9 +204,9 @@ autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
 " ---------------------- Laravel stuff ------------"
 nmap <leader>lr :e routes/web.php<cr>
 nmap <leader>lca :e config/app.php<cr>
-nmap <leader>lfc :CtrlP<cr>app/Http/Controllers
-nmap <leader>lfm :CtrlP<cr>app/Models
-nmap <leader>lfv :CtrlP<cr>resources/views
+nmap <leader>lfc :CtrlP<cr>apphttpcontrollers
+nmap <leader>lfm :CtrlP<cr>appmodels
+nmap <leader>lfv :CtrlP<cr>resourcesviews
 
 
 " notes and tips

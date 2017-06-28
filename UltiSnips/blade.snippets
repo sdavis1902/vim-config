@@ -135,3 +135,11 @@ Schema::table('$1', function($table){
 	$table->dropColumn('$2');
 });
 endsnippet
+
+
+snippet binforow
+<div class="row">
+	<div class="col-md-$1"><b>$3</b></div>
+	<div class="col-md-$2">{{ $$4 }}</div>
+</div>
+endsnippet

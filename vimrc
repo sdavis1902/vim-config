@@ -170,6 +170,15 @@ autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.twig :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
 
+"
+" --- php_cs_fixer stuff ---
+"
+nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
+" run cs fixer on save, for some reason messes up syntax, so added post
+" command to add it back
+" autocmd BufWritePre *.php :call PhpCsFixerFixFile()
+" autocmd BufWritePost *.php :set syntax=php
+
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Always show statusline

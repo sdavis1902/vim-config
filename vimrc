@@ -18,6 +18,8 @@ nnoremap <C-b> :NERDTreeToggle<Cr>
 nnoremap <tab> :bnext<Cr>
 nnoremap <Backspace> :bprevious<Cr>
 
+set pastetoggle=<leader>q
+
 "easier window navigation
 
 nmap <C-h> <C-w>h

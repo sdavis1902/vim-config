@@ -60,7 +60,11 @@ nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+"let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+
+let g:UltiSnipsSnippetsDir = $HOME."/.vim/UltiSnips"
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.vim/UltiSnips']
+
 " disable arrow keys to force use of hjkl
 " nnoremap <up> <nop>
 " nnoremap <down> <nop>

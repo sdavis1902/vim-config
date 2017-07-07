@@ -150,8 +150,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_php_checkers = ['php']
 
-nmap <F9> :TagbarOpenAutoClose<CR>
-nmap <F8> :TagbarToggle<CR>
+nmap <leader>to :TagbarOpenAutoClose<CR>
+nmap <leader>tt :TagbarToggle<CR>
 
 set updatetime=1500
 

@@ -96,7 +96,7 @@ nnoremap ; :
 
 " make it visualize tabs and end of lines
 " set list
-" set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬
 " ,1 disable and enable above
 nmap <leader>1 :set list!<cr>
 
@@ -119,7 +119,7 @@ set smarttab
 set hidden
 
 " always uses spaces instead of tab characters
-set expandtab
+" set expandtab
 " set autoindent
 " set autoindent
 " set shiftwidth=4
@@ -148,6 +148,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_checkers = ['php']
 
 nmap <leader>to :TagbarOpenAutoClose<CR>

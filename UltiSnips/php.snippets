@@ -133,6 +133,23 @@ class $1 extends Model {
 endsnippet
 
 
+snippet empcon
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class $1Controller extends Controller {
+
+}
+endsnippet
+
+
 snippet migcr
 Schema::create('$1', function($table) {
 	$table->engine = 'InnoDB';

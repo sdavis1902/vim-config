@@ -113,3 +113,71 @@ endsnippet
 snippet $
 $this->${1}
 endsnippet
+
+
+snippet empmod
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class $1 extends Model {
+	use SoftDeletes;
+
+	protected $table = '$2';
+	protected $dates = ['deleted_at', 'created_at', 'updated_at'];
+
+}
+endsnippet
+
+
+snippet migcr
+Schema::create('$1', function($table) {
+	$table->engine = 'InnoDB';
+
+	$table->increments('id')->unsigned();
+
+	$table->timestamps();
+	$table->softdeletes();
+});
+endsnippet
+
+
+snippet migs
+$table->string('$1', $2);
+endsnippet
+
+
+snippet migi
+$table->integer('$1')->unsigned();
+endsnippet
+
+
+snippet mige
+$table->enum('$1', ['$2'])->default('$3');
+endsnippet
+
+
+snippet migfk
+$table->integer('$1')->unsigned();
+$table->foreign('$1')->references('id')->on('$2');
+endsnippet
+
+
+snippet migdt
+Schema::drop('$1');
+endsnippet
+
+
+snippet miged
+Schema::table('$1', function ($table) {
+
+});
+endsnippet
+
+
+snippet migdc
+$table->dropColumn('$1');
+endsnippet

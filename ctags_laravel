@@ -1,0 +1,10 @@
+-R
+--languages=php
+--php-kinds=cif
+--regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
+--exclude=node_modules
+--exclude=public
+--exclude=resources
+--exclude=tests/*
+--exclude=vendor/*/vendor
+--fields=+aimS

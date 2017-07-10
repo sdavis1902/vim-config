@@ -37,7 +37,7 @@ nmap 75 :vertical resize 120<cr>
 nmap vs :vsplit<cr>
 nmap sp :split<cr>
 
-nmap <leader>t :!ctags -R --exclude=vendor --exclude=node_modules --exclude=public<cr>
+nmap <leader>t :!ctags<cr>
 nmap <leader>f :tag<space>
 
 " mac searching case insensative and highlight as you type etc

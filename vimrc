@@ -186,8 +186,8 @@ nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
 " run cs fixer on save, for some reason messes up syntax, so added post
 " command to add it back
 if hostname() == "scottdev"
-	autocmd BufWritePre *.php :call PhpCsFixerFixFile()
-	autocmd BufWritePost *.php :set syntax=php
+	"autocmd BufWritePre *.php :call PhpCsFixerFixFile()
+	"autocmd BufWritePost *.php :set syntax=php
 endif
 
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/

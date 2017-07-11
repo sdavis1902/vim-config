@@ -15,4 +15,5 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 After that, open vim and use command :PluginInstall
+
 for any projects that you want to run ctags, copy ctags_laravel to project_root/.ctags

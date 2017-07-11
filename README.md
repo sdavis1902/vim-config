@@ -17,3 +17,5 @@ ln -s ~/.vim/vimrc ~/.vimrc
 After that, open vim and use command :PluginInstall
 
 for any projects that you want to run ctags, copy ctags_laravel to project_root/.ctags
+
+I also like to use the [this](https://github.com/Mayccoll/Gogh) terminal color scheme installer to install one light theme

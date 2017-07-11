@@ -46,6 +46,21 @@ snippet input
 endsnippet
 
 
+snippet textarea
+<div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
+	<label>$2</label>
+	<textarea name="$1" class="form-control">{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}</textarea>
+	@if( $errors->has('$1') )
+		@foreach( $errors->get('$1') as $error )
+			<p class="help-block">
+				{{ $error }}
+			</p>
+		@endforeach
+	@endif
+</div>
+endsnippet
+
+
 snippet select
 <div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
 	<label>$2</label>

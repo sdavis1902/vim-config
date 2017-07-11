@@ -30,7 +30,7 @@ endsnippet
 
 
 snippet rede
-	return redirect('$1')->withError('$2');
+return redirect('$1')->withError('$2');
 endsnippet
 
 
@@ -128,6 +128,23 @@ class $1 extends Model {
 
 	protected $table = '$2';
 	protected $dates = ['deleted_at', 'created_at', 'updated_at'];
+
+}
+endsnippet
+
+
+snippet empcon
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+class $1Controller extends Controller {
 
 }
 endsnippet

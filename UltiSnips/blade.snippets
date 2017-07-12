@@ -38,9 +38,7 @@ snippet input
 	<span id="errors">
 		@if( $errors->has('$1') )
 			@foreach( $errors->get('$1') as $error )
-				<p class="help-block">
-					{{ $error }}
-				</p>
+				<p class="help-block">{{ $error }}</p>
 			@endforeach
 		@endif
 	</span>
@@ -55,9 +53,7 @@ snippet textarea
 	<span id="errors">
 		@if( $errors->has('$1') )
 			@foreach( $errors->get('$1') as $error )
-				<p class="help-block">
-					{{ $error }}
-				</p>
+				<p class="help-block">{{ $error }}</p>
 			@endforeach
 		@endif
 	</span>
@@ -76,9 +72,7 @@ snippet select
 	<span id="errors">
 		@if( $errors->has('$1') )
 			@foreach($errors->get('$1') as $error )
-				<p class="help-block">
-					{{ $error }}
-				</p>
+				<p class="help-block">{{ $error }}</p>
 			@endforeach
 		@endif
 	</span>

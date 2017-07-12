@@ -2,26 +2,31 @@ snippet tif
 {% if $1 %}
 endsnippet
 
+
 snippet telse
 {% else %}
 endsnippet
+
 
 snippet tendif
 {% endif %}
 endsnippet
 
+
 snippet tfor
 {% for $1 as $2 %}
 endsnippet
+
 
 snippet tendfor
 {% endfor %}
 endsnippet
 
+
 snippet input
 <div class="form-group{{ errors.has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
-	<input name="$1" class="form-control" value="{{ old('$1') ? old('$1') : ($3) ? $3.$1:''}}">
+	<input name="$1" id="$1" class="form-control" value="{{ old('$1') ? old('$1') : ($3) ? $3.$1:''}}">
 	{% if errors.has('$1') %}
 		{% for error in errors.get('$1') %}
 			<p class="help-block">
@@ -32,10 +37,26 @@ snippet input
 </div>
 endsnippet
 
+
+snippet textarea
+<div class="form-group{{ errors.has('$1') ? ' has-error':'' }}">
+	<label>$2</label>
+	<textarea name="$1" id="$1" class="form-control">{{ old('$1') ? old('$1') : ($3) ? $3.$1:''}}</textarea>
+	{% if errors.has('$1') %}
+		{% for error in errors.get('$1') %}
+			<p class="help-block">
+				{{ error }}
+			</p>
+		{% endfor %}
+	{% endif %}
+</div>
+endsnippet
+
+
 snippet select
 <div class="form-group{{ errors.has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
-	<select name="$1" class="form-control">
+	<select name="$1" id="$1" class="form-control">
 		{% for $3 in $4 %}
 			<option{{ old('$1') == $3.id  ? ' selected' : ($5 and $5.$1 == $3.id ? ' selected':'') }} value="{{ $3.id }}">{{ $3.$6 }}</option>
 		{% endfor %}
@@ -49,6 +70,7 @@ snippet select
 	{% endif %}
 </div>
 endsnippet
+
 
 snippet selects
 <div class="form-group{{ errors.has('$1') ? ' has-error' : '' }}">

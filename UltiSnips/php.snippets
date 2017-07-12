@@ -150,51 +150,53 @@ class $1Controller extends Controller {
 endsnippet
 
 
-snippet migcr
+snippet lmcreate
 Schema::create('$1', function($table) {
 	$table->engine = 'InnoDB';
 
 	$table->increments('id')->unsigned();
 
 	$table->timestamps();
-	$table->softdeletes();
+	$table->softDeletes();
 });
 endsnippet
 
 
-snippet migs
-$table->string('$1', $2);
-endsnippet
-
-
-snippet migi
-$table->integer('$1')->unsigned();
-endsnippet
-
-
-snippet mige
-$table->enum('$1', ['$2'])->default('$3');
-endsnippet
-
-
-snippet migfk
-$table->integer('$1')->unsigned();
-$table->foreign('$1')->references('id')->on('$2');
-endsnippet
-
-
-snippet migdt
-Schema::drop('$1');
-endsnippet
-
-
-snippet miged
+snippet lmedit
 Schema::table('$1', function ($table) {
 
 });
 endsnippet
 
 
-snippet migdc
-$table->dropColumn('$1');
+snippet lmforkey
+$table->integer('$1')->unsigned();
+$table->foreign('$1')->references('id')->on('$2');
+endsnippet
+
+
+snippet lmint
+$table->integer('$1');
+endsnippet
+
+
+snippet lmstr
+$table->string('$1', $2);
+endsnippet
+
+
+snippet lmenum
+$table->enum('$1', [$2])->default('$3');
+endsnippet
+
+
+snippet lmdropt
+Schema::drop('$1');
+endsnippet
+
+
+snippet lmdropc
+Schema::table('$1', function($table){
+	$table->dropColumn('$2');
+});
 endsnippet

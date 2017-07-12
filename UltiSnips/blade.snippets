@@ -34,7 +34,7 @@ endsnippet
 snippet input
 <div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
-	<input name="$1" class="form-control" value="{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}">
+	<input name="$1" id="$1" class="form-control" value="{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}">
 	@if( $errors->has('$1') )
 		@foreach( $errors->get('$1') as $error )
 			<p class="help-block">
@@ -49,7 +49,7 @@ endsnippet
 snippet textarea
 <div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
-	<textarea name="$1" class="form-control">{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}</textarea>
+	<textarea name="$1" id="$1" class="form-control">{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}</textarea>
 	@if( $errors->has('$1') )
 		@foreach( $errors->get('$1') as $error )
 			<p class="help-block">
@@ -64,7 +64,7 @@ endsnippet
 snippet select
 <div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
-	<select name="$1" class="form-control">
+	<select name="$1" id="$1" class="form-control">
 		@foreach( $3 as $$4 )
 			<option{{ old('$1') == $$4->id  ? ' selected' : ($$5 && $$5->$1 == $$4->id ? ' selected':'') }} value="{{ $$4->id }}">{{ $$4->$6 }}</option>
 		@endforeach
@@ -97,58 +97,6 @@ snippet selects
 		@endforeach
 	@endif
 </div>
-endsnippet
-
-
-snippet lmcreate
-Schema::create('$1', function($table) {
-	$table->engine = 'InnoDB';
-
-	$table->increments('id')->unsigned();
-
-	$table->timestamps();
-	$table->softDeletes();
-});
-endsnippet
-
-
-snippet lmedit
-Schema::table('$1', function ($table) {
-
-});
-endsnippet
-
-
-snippet lmforkey
-$table->integer('$1')->unsigned();
-$table->foreign('$1')->references('id')->on('$2');
-endsnippet
-
-
-snippet lmint
-$table->integer('$1');
-endsnippet
-
-
-snippet lmstr
-$table->string('$1', $2);
-endsnippet
-
-
-snippet lmenum
-$table->enum('$1', [$2])->default('$3');
-endsnippet
-
-
-snippet lmdropt
-Schema::drop('$1');
-endsnippet
-
-
-snippet lmdropc
-Schema::table('$1', function($table){
-	$table->dropColumn('$2');
-});
 endsnippet
 
 

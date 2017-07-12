@@ -35,13 +35,15 @@ snippet input
 <div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
 	<input name="$1" id="$1" class="form-control" value="{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}">
-	@if( $errors->has('$1') )
-		@foreach( $errors->get('$1') as $error )
-			<p class="help-block">
-				{{ $error }}
-			</p>
-		@endforeach
-	@endif
+	<span id="errors">
+		@if( $errors->has('$1') )
+			@foreach( $errors->get('$1') as $error )
+				<p class="help-block">
+					{{ $error }}
+				</p>
+			@endforeach
+		@endif
+	</span>
 </div>
 endsnippet
 
@@ -50,13 +52,15 @@ snippet textarea
 <div class="form-group{{ $errors->has('$1') ? ' has-error':'' }}">
 	<label>$2</label>
 	<textarea name="$1" id="$1" class="form-control">{{ old('$1') ? old('$1') : ($$3) ? $$3->$1:''}}</textarea>
-	@if( $errors->has('$1') )
-		@foreach( $errors->get('$1') as $error )
-			<p class="help-block">
-				{{ $error }}
-			</p>
-		@endforeach
-	@endif
+	<span id="errors">
+		@if( $errors->has('$1') )
+			@foreach( $errors->get('$1') as $error )
+				<p class="help-block">
+					{{ $error }}
+				</p>
+			@endforeach
+		@endif
+	</span>
 </div>
 endsnippet
 
@@ -69,13 +73,15 @@ snippet select
 			<option{{ old('$1') == $$4->id  ? ' selected' : ($$5 && $$5->$1 == $$4->id ? ' selected':'') }} value="{{ $$4->id }}">{{ $$4->$6 }}</option>
 		@endforeach
 	</select>
-	@if( $errors->has('$1') )
-		@foreach($errors->get('$1') as $error )
-			<p class="help-block">
-				{{ $error }}
-			</p>
-		@endforeach
-	@endif
+	<span id="errors">
+		@if( $errors->has('$1') )
+			@foreach($errors->get('$1') as $error )
+				<p class="help-block">
+					{{ $error }}
+				</p>
+			@endforeach
+		@endif
+	</span>
 </div>
 endsnippet
 
@@ -91,11 +97,13 @@ snippet selects
 			<option value="$3">$3</option>
 		@endif
 	</select>
-	@if( $errors->has('$1') )
-		@foreach($errors->get('$1') as $error)
-			<p class="help-block">{{ $error }}</p>
-		@endforeach
-	@endif
+	<span id="errors">
+		@if( $errors->has('$1') )
+			@foreach($errors->get('$1') as $error)
+				<p class="help-block">{{ $error }}</p>
+			@endforeach
+		@endif
+	</span>
 </div>
 endsnippet
 

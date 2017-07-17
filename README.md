@@ -5,9 +5,8 @@ My Vim configuration, so I can easily clone it to any remote machine I happen to
 ## Install
 
 ``` bash
-mkdir ~/.vim
+git clone https://github.com/sdavis1902/vim-config ~/.vim
 cd ~/.vim
-git clone https://github.com/sdavis1902/vim-config
 mkdir bundle
 cd bundle
 git clone https://github.com/VundleVim/Vundle.vim.git

@@ -30,11 +30,11 @@ endsnippet
 
 snippet post
 $.post( "$1", { $2 }, function( data ){
-	if( data.status == 'success' ){
+	if( data.status != 'success' ){
 		$3
-	}else{
-		$4
 	}
+
+	$4
 });
 endsnippet
 

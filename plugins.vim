@@ -37,6 +37,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tobyS/pdv'
 Plugin 'scrooloose/nerdtree'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

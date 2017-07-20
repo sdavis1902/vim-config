@@ -33,6 +33,9 @@ nmap 25 :vertical resize 40<cr>
 nmap 50 <c-w>=
 nmap 75 :vertical resize 120<cr>
 
+" EMMET
+let g:user_emmet_leader_key='<leader>e'
+
 " Open splits
 nmap vs :vsplit<cr>
 nmap sp :split<cr>

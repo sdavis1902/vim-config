@@ -93,3 +93,20 @@ snippet selects
 	</span>
 </div>
 endsnippet
+
+
+snippet selectv
+<div class="form-group{{ errors.has('$1') ? ' has-error':'' }}">
+	<label>$2</label>
+	<select name="$1" class="form-control">
+		<option v-for="$3 in $4" v-bind:value="$3">${ $3 }</option>
+	</select>
+	<span id="errors">
+		{% if errors.has('$1') %}
+			{% for error in errors.get('$1') %}
+				<p class="help-block">{{ error }}</p>
+			{% endfor %}
+		{% endif %}
+	</span>
+</div>
+endsnippet

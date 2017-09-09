@@ -122,9 +122,9 @@ set smarttab
 set hidden
 
 " always uses spaces instead of tab characters
-if hostname() == "scottdev"
+" if hostname() == "scottdev"
     set expandtab
-endif
+" endif
 " set autoindent
 " set autoindent
 " set shiftwidth=4
@@ -178,9 +178,9 @@ set encoding=utf-8
 set noshowmode
 
 " auto-remove trailing spaces
-autocmd BufWritePre *.php :%s/\s\+$//e
-autocmd BufWritePre *.twig :%s/\s\+$//e
-autocmd BufWritePre *.js :%s/\s\+$//e
+" autocmd BufWritePre *.php :%s/\s\+$//e
+" autocmd BufWritePre *.twig :%s/\s\+$//e
+" autocmd BufWritePre *.js :%s/\s\+$//e
 
 "
 " --- php_cs_fixer stuff ---

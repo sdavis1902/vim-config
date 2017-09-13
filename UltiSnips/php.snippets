@@ -47,7 +47,7 @@ endsnippet
 
 
 snippet vfail
-if( $v->fails() ){
+if($v->fails()){
 	return redirect('$1')->withErrors($v)->withInput();
 }
 endsnippet

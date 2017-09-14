@@ -174,7 +174,7 @@ endsnippet
 
 
 snippet lmcreate
-Schema::create('$1', function($table) {
+Schema::create('$1', function ($table) {
 	$table->engine = 'InnoDB';
 
 	$table->increments('id')->unsigned();
@@ -219,7 +219,7 @@ endsnippet
 
 
 snippet lmdropc
-Schema::table('$1', function($table){
+Schema::table('$1', function ($table) {
 	$table->dropColumn('$2');
 });
 endsnippet

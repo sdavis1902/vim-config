@@ -1,12 +1,14 @@
 snippet met
-public function $1($2){
+public function $1($2)
+{
 	$3
 }
 endsnippet
 
 
 snippet pmet
-private function $1($2){
+private function $1($2)
+{
 	$3
 }
 endsnippet
@@ -34,6 +36,20 @@ return redirect('$1')->withError('$2');
 endsnippet
 
 
+snippet redn
+return redirect()->route('$1');
+endsnippet
+
+
+snippet rednm
+return redirect()->route('$1')->withMessage('$2');
+endsnippet
+
+
+snippet redne
+return redirect()->route('$1')->withError('$2');
+endsnippet
+
 snippet retv
 return view('$1');
 endsnippet
@@ -47,7 +63,7 @@ endsnippet
 
 
 snippet vfail
-if($v->fails()){
+if ($v->fails()) {
 	return redirect('$1')->withErrors($v)->withInput();
 }
 endsnippet
@@ -66,8 +82,13 @@ $v = Validator::make($request->all(), $rules);
 endsnippet
 
 
-snippet find
+snippet mfind
 $$1 = $2::find($3);
+endsnippet
+
+
+snippet mget
+$$1 = $2::get();
 endsnippet
 
 
@@ -123,7 +144,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class $1 extends Model {
+class $1 extends Model
+{
 	use SoftDeletes;
 
 	protected $table = '$2';
@@ -144,7 +166,8 @@ use Illuminate\Http\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class $1Controller extends Controller {
+class $1Controller extends Controller
+{
 
 }
 endsnippet

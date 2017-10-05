@@ -208,6 +208,11 @@ $table->string('$1', $2);
 endsnippet
 
 
+snippet lmtext
+$table->text('$1');
+endsnippet
+
+
 snippet lmenum
 $table->enum('$1', [$2])->default('$3');
 endsnippet
@@ -270,5 +275,76 @@ snippet belongstomany
 public function $1()
 {
 	return $this->belongsToMany('App\Models\\$2')->withPivot($3);;
+}
+endsnippet
+
+
+snippet myresource
+public function getIndex()
+{
+	$$1s = $2::paginate(20);
+
+	return view('$3.index', [
+		'$1s' => $$1s
+	]);
+}
+
+public function postEdit(Request $request, $id = null)
+{
+	$rules = [
+		$4
+	];
+
+	$v = Validator::make($request->all(), $rules);
+
+	if ($v->fails()) {
+		return redirect('$5/'. ( $id ? "edit/$id" : 'create' ))->withErrors($v)->withInput();
+	}
+
+	$$1 = $id ? $2::find($id) : new $2;
+	if ($id && !$$1) {
+		return redirect('$5')->withError('Could not find $1');
+	}
+
+	$$1->save();
+
+	$message = $id ? '$2 has been updated' : '$2 has been created';
+	return redirect('$5')->withMessage($message);
+}
+
+public function getEdit(Request $request, $id = null)
+{
+	$$1 = $id ? $2::find($id) : null;
+
+	if ($id && !$$1) {
+		return redirect('$5')->withMessage('Could not find $1');
+	}
+
+	return view('$3.edit', [
+		'$1' => $$1
+	]);
+}
+
+public function postCreate(Request $request)
+{
+	return $this->postEdit($request, null);
+}
+
+public function getCreate(Request $request)
+{
+	return $this->getEdit($request, null);
+}
+
+public function getDelete($id)
+{
+	$$1 = $2::find($id);
+
+	if (!$$1) {
+		return redirect('$5')->withError('Could not find $1');
+	}
+
+	$$1->delete();
+
+	return redirect('$5')->withMessage('$2 has been removed');
 }
 endsnippet

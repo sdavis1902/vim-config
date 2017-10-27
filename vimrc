@@ -13,6 +13,8 @@ map <C-o> :CtrlPBufTag<cr>
 "set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
 
+autocmd FileType vue syntax sync fromstart
+
 nnoremap <C-b> :NERDTreeToggle<Cr>
 
 nnoremap <tab> :bnext<Cr>

@@ -10,7 +10,7 @@ let mapleader = ","
 
 nnoremap <leader>e :CtrlPBuffer<Cr>
 map <C-o> :CtrlPBufTag<cr>
-"set wildignore+=*/vendor/**
+set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
 
 autocmd FileType vue syntax sync fromstart

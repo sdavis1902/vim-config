@@ -22,6 +22,8 @@ nnoremap <Backspace> :bprevious<Cr>
 
 set pastetoggle=<leader>q
 
+set rtp+=~/.fzf
+
 "easier window navigation
 
 nmap <C-h> <C-w>h

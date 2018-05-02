@@ -8,11 +8,16 @@ let mapleader = ","
 " narrow the list down with a word under cursor
 " nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
-"nnoremap <leader>e :CtrlPBuffer<Cr>
-"map <C-o> :CtrlPBufTag<cr>
+if v:version < 800
+    nnoremap <leader>e :CtrlPBuffer<Cr>
+    map <C-o> :CtrlPBufTag<cr>
+endif
 
-nmap <C-p> :Files<Cr>
-nmap <C-t> :Tags<Cr>
+if v:version > 799
+    nmap <C-p> :Files<Cr>
+    nmap <C-t> :Tags<Cr>
+    nmap <C-o> :BTags<Cr>
+endif
 
 set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
@@ -26,7 +31,9 @@ nnoremap <Backspace> :bprevious<Cr>
 
 set pastetoggle=<leader>q
 
-set rtp+=~/.fzf
+if v:version > 799
+    set rtp+=~/.fzf
+endif
 
 "easier window navigation
 
@@ -153,16 +160,18 @@ let g:ag_working_path_mode="r"
 
 syntax on
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+if v:version < 800
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"" let g:syntastic_php_checkers = ['php', 'phpcs']
-"let g:syntastic_php_checkers = ['php']
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_php_checkers = ['php', 'phpcs']
+    let g:syntastic_php_checkers = ['php']
+endif
 
 nmap <leader>to :TagbarOpenAutoClose<CR>
 nmap <leader>tt :TagbarToggle<CR>

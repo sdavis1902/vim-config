@@ -19,12 +19,14 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
-"Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 Plugin 'StanAngeloff/php.vim'
-" Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'tacahiroy/ctrlp-funky'
+if v:version < 800
+    Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'tacahiroy/ctrlp-funky'
+    Plugin 'scrooloose/syntastic'
+endif
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -38,9 +40,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'stephpy/vim-php-cs-fixer'
 Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
-Plugin 'junegunn/fzf.vim'
-Plugin 'w0rp/ale'
-Plugin 'ludovicchabant/vim-gutentags'
+if v:version > 799
+    Plugin 'junegunn/fzf.vim'
+    Plugin 'w0rp/ale'
+    Plugin 'ludovicchabant/vim-gutentags'
+endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

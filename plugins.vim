@@ -12,7 +12,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'lumiliet/vim-twig'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 Plugin 'isruslan/vim-es6'
 Plugin 'xsbeats/vim-blade'
 Plugin 'vim-airline/vim-airline-themes'
@@ -43,7 +43,7 @@ Plugin 'posva/vim-vue'
 if v:version > 799
     Plugin 'junegunn/fzf.vim'
     Plugin 'w0rp/ale'
-    Plugin 'ludovicchabant/vim-gutentags'
+"    Plugin 'ludovicchabant/vim-gutentags'
 endif
 
 " All of your Plugins must be added before the following line

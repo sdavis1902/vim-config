@@ -21,10 +21,14 @@ endif
 
 set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
+set redrawtime=5000
 
 autocmd FileType vue syntax sync fromstart
 
 nnoremap <C-b> :NERDTreeToggle<Cr>
+
+nnoremap <Leader>s :syntax sync fromstart<Cr>
+nnoremap <Leader>u :syntax sync fromstart<cr>:redraw!<cr>
 
 nnoremap <tab> :bnext<Cr>
 nnoremap <Backspace> :bprevious<Cr>
@@ -76,6 +80,8 @@ nnoremap <leader>w :FixWhitespace<cr>
 
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
+
+let g:ale_lint_on_save = 1
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"

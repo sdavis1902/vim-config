@@ -4,6 +4,14 @@ so ~/.vim/plugins.vim
 
 let mapleader = ","
 
+
+set notermguicolors
+
+
+" set termguicolors
+" set background=light
+" colorscheme PaperColor
+
 " nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
 " nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
@@ -83,9 +91,16 @@ nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
 
 let g:ale_lint_on_save = 1
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:ale_pattern_options = {
+  \   '\.LeaseApplicationController\.php$': {
+  \       'ale_linters': [],
+  \       'ale_fixers': [],
+  \   },
+  \}
+
+let g:UltiSnipsExpandTrigger="<C-i>"
+let g:UltiSnipsJumpForwardTrigger="<C-i>"
+let g:UltiSnipsJumpBackwardTrigger="<C-u>"
 "let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
 
 let g:UltiSnipsSnippetsDir = $HOME."/.vim/UltiSnips"
